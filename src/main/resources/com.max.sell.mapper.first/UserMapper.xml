@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.max.sell.mapper.first.UserMapper">
+    <resultMap id="UserResultMap" type="com.max.sell.entity.User">
+        <id column="USER_ID" property="userId"></id>
+        <result column="ACCOUNT" property="account"></result>
+        <result column="PASSWORD" property="password"></result>
+        <result column="USER_GROUP" property="userGroup"></result>
+        <result column="IMG_URL" property="imgUrl"></result>
+        <result column="CREATE_TIME" property="createTime"></result>
+        <result column="SHOP_ID" property="shopId"></result>
+    </resultMap>
+
+
+    <select id="findAllUsers" resultMap="UserResultMap">
+        select * from USERS
+    </select>
+
+    <select id="findAll" resultType="java.util.HashMap">
+        select * from USERS
+    </select>
+</mapper>
