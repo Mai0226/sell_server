@@ -13,7 +13,7 @@ pipeline {
       }
       stage('Deploy') {
          steps {
-            sh label: '', script: 'mvn -f clean package dockerfile:build'
+            sh label: '', script: 'mvn  clean package dockerfile:build'
          }
       }
    }
