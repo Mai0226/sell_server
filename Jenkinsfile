@@ -14,6 +14,7 @@ pipeline {
       stage('Deploy') {
          steps {
             sh label: '', script: 'mvn  clean package dockerfile:build'
+            sh label: '', script: 'docker run -di -p 8082:8082 sell:latest'
          }
       }
    }
