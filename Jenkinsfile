@@ -3,7 +3,7 @@ pipeline {
    stages {
        stage('Clean') {
          steps {
-
+            echo 'coming'
          }
       }
       stage('Pull') {
@@ -13,7 +13,7 @@ pipeline {
       }
       stage('Deploy') {
          steps {
-
+            sh label: '', script: 'mvn -f clean package dockerfile:build'
          }
       }
    }
